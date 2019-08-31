@@ -1,0 +1,15 @@
+spring:
+  application:
+    name:  elasticserverdemo
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+      repositories:
+        enabled: true
+server:
+  port: 8088
+
+#spring.data.elasticsearch.cluster-name=elasticsearch
+#spring.data.elasticsearch.cluster-nodes=192.168.12.160:9300
+#spring.data.elasticsearch.repositories.enabled=true
