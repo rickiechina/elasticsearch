@@ -12,3 +12,9 @@ spring-data-elasticsearch 是 Spring Data 的 Community modules 之一，是 Spr
 
 现在Elasticsearch 官方推出Java High Level REST Client，它是基于Java Low Level REST Client的封装，并且API接收参数和返回值和TransportClient是一样的，使得代码迁移变得容易并且支持了RESTful的风格，兼容了这两种客户端的优点。当然缺点是存在的，就是版本的问题。ES的小版本更新非常频繁，在最理想的情况下，客户端的版本要和ES的版本一致（至少主版本号一致），次版本号不一致的话，基本操作也许可以，但是新API就不支持了。
 
+## 第三个项目：transport-client-demo
+
+使用Java TransportClient 操作Elasticsearch（Spring Boot/Maven）。
+
+本文演示通过Transport Client来操作Elasticsearch。TransportClient 是一种轻量级的方法，它通过Socket与Elasticsearch集群连接，是基于Netty 线程池的方式。
+
