@@ -82,7 +82,7 @@ public class BookService {
 
             request.doc(content);
             UpdateResponse response = client.update(request).get();
-            return response.toString();
+            return response.getResult().toString();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

@@ -29,6 +29,12 @@ public class BookController {
         return bookService.findBookById(id);
     }
 
+    @GetMapping("getasync/{id}")
+    public String getasync(@PathVariable String id) {
+        System.out.println("id:" + id);
+        return bookService.findBookByIdAsync(id);
+    }
+
     @PostMapping("update")
     public String update(@RequestBody BookVO vo) {
         System.out.println("id:" + vo.getId());
