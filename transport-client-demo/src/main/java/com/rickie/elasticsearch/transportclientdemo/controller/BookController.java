@@ -6,6 +6,7 @@ import com.rickie.elasticsearch.transportclientdemo.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping("book")
@@ -29,12 +30,16 @@ public class BookController {
         return bookService.findBookById(id);
     }
 
+    @GetMapping("gets")
+    public String gets(@RequestParam("ids") List<String> ids) {
+        return bookService.findBooks(ids);
+    }
+
     @PostMapping("update")
     public String update(@RequestBody BookVO vo) {
         System.out.println("id:" + vo.getId());
         return bookService.update(vo);
     }
-
 
     @PostMapping("delete/{id}")
     public String delete(@PathVariable String id) {

@@ -1,0 +1,70 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+GET http://localhost:9200
+{}
+
+###
+GET http://localhost:9200/_cat/indices
+
+
+###
+
+###  创建一个新的 people 索引
+PUT http://localhost:9200/people
+Content-Type: application/json
+
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "type": {"type": "keyword"},
+      "name": {"type": "text"},
+      "country": {"type": "keyword"},
+      "age": {"type": "integer"},
+      "date": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis"
+      }
+    }
+  }
+}
+
+###
+
+POST http://localhost:9200/people/_doc/1
+Content-Type: application/json
+
+{
+    "type": "student",
+    "name": "rickie",
+    "country": "中国",
+    "age": "20",
+    "date": "2019-01-01"
+}
+
+###
+GET http://localhost:9200/people/_doc/1
+
+###
+POST http://localhost:9200/_analyze
+Content-Type: application/json
+
+{
+    "analyzer": "ik_smart",
+    "text": "中华人民共和国人民大会堂"
+}
+
+###
+
+POST http://localhost:9200/people/_search
+Content-Type: application/json
+
+###

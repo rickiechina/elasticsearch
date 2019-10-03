@@ -18,3 +18,8 @@ spring-data-elasticsearch 是 Spring Data 的 Community modules 之一，是 Spr
 
 本文演示通过Transport Client来操作Elasticsearch。TransportClient 是一种轻量级的方法，它通过Socket与Elasticsearch集群连接，是基于Netty 线程池的方式。
 
+完整的技术文档，可以参考如下链接：
+
+https://learning.snssdk.com/feoffline/toutiao_wallet_bundles/toutiao_learning_wap/online/album_detail.html?content_id=6733933729732886796
+
+![](https://raw.githubusercontent.com/rickiechina/elasticsearch-order/master/images/%E3%80%8AElasticsearch%207.x%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E3%80%8B%E4%B8%93%E6%A0%8F%E6%B5%B7%E6%8A%A51.png)

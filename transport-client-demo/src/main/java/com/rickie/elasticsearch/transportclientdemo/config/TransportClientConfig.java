@@ -19,7 +19,7 @@ public class TransportClientConfig {
     @Value("${elasticsearch.cluster-name}")
     private String cluster;
 
-    @Bean("transportClient")
+    @Bean(value = "transportClient", destroyMethod = "close")
     public TransportClient client() {
         try{
             // 设置ES实例的名称
